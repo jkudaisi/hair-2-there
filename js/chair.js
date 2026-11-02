@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import {RoundedBoxGeometry} from 'three/addons/geometries/RoundedBoxGeometry.js';
 const cv=document.getElementById('chair');if(cv){
-const RM=matchMedia('(prefers-reduced-motion: reduce)').matches,sfx=n=>window.SFX&&SFX.play(n);
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const r=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});r.setPixelRatio(Math.min(devicePixelRatio,2));r.outputColorSpace=THREE.SRGBColorSpace;r.toneMapping=THREE.ACESFilmicToneMapping;r.shadowMap.enabled=true;
 const scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(34,1,.1,100);cam.position.set(0,3,12);cam.lookAt(0,1.9,0);
 scene.add(new THREE.HemisphereLight(0xfff1e0,0x20120a,1.2));
@@ -40,16 +40,16 @@ function lift(){piston.scale.y=1+H*.25;piston.position.y=.22+(1+H*.25)/2;top.pos
 function size(){const w=cv.clientWidth,h=cv.clientHeight;if(!w||!h)return;r.setSize(w,h,false);cam.aspect=w/h;cam.fov=w<500?42:34;cam.updateProjectionMatrix()}
 size();addEventListener('resize',size);
 cv.addEventListener('pointerdown',e=>{drag=true;lx=e.clientX;cv.setPointerCapture(e.pointerId);vel=0;cv.classList.add('grab')});
-cv.addEventListener('pointermove',e=>{if(!drag)return;const dx=e.clientX-lx;lx=e.clientX;rotY+=dx*.012;vel=dx*.012;if(Math.abs(dx)>14)sfx('whoosh')});
+cv.addEventListener('pointermove',e=>{if(!drag)return;const dx=e.clientX-lx;lx=e.clientX;rotY+=dx*.012;vel=dx*.012;});
 const up=()=>{drag=false;cv.classList.remove('grab')};cv.addEventListener('pointerup',up);cv.addEventListener('pointercancel',up);
 // lever
 const lev=document.getElementById('lever'),arm=lev.querySelector('.lever-arm');let ly=0,ld=false,pumped=false;
-const pump=()=>{if(targetH<5){targetH++;sfx('pump')}lev.setAttribute('aria-valuenow',targetH)};
+const pump=()=>{if(targetH<5){targetH++;}lev.setAttribute('aria-valuenow',targetH)};
 lev.addEventListener('pointerdown',e=>{ld=true;ly=e.clientY;pumped=false;lev.setPointerCapture(e.pointerId)});
 lev.addEventListener('pointermove',e=>{if(!ld)return;const d=Math.max(0,Math.min(60,e.clientY-ly));arm.style.transform=`rotate(${d*.9}deg)`;if(d>45&&!pumped){pumped=true;pump()}if(d<10)pumped=false});
 const lu=()=>{if(!ld)return;ld=false;if(!pumped)pump();arm.style.transform=''};lev.addEventListener('pointerup',lu);lev.addEventListener('pointercancel',lu);
 lev.addEventListener('keydown',e=>{if(e.key==='ArrowDown'||e.key==='Enter'||e.key===' '){e.preventDefault();pump();arm.style.transform='rotate(50deg)';setTimeout(()=>arm.style.transform='',150)}});
-document.getElementById('drop').addEventListener('click',()=>{if(targetH>0){targetH=0;sfx('hiss');lev.setAttribute('aria-valuenow',0)}});
+document.getElementById('drop').addEventListener('click',()=>{if(targetH>0){targetH=0;lev.setAttribute('aria-valuenow',0)}});
 let vis=false;new IntersectionObserver(([e])=>vis=e.isIntersecting).observe(cv);
 lift();
 (function f(){requestAnimationFrame(f);if(!vis)return;

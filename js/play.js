@@ -1,11 +1,11 @@
 (()=>{
-const sfx=n=>window.SFX&&SFX.play(n),RM=matchMedia('(prefers-reduced-motion: reduce)').matches,D=window.H2T;
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches,D=window.H2T;
 function find(title){for(const c of D.categories)for(const id of c.ids)if(D.services[id].t===title)return{id,cat:c.id,s:D.services[id]};return null}
 const fmt=m=>m>=60?(Math.floor(m/60)+'h'+(m%60?' '+m%60+'m':'')):m+'m';
 // NEON
 const neon=document.getElementById('neon'),sw=document.getElementById('neonSw');
 sw.addEventListener('click',()=>{const on=neon.dataset.on!=='true';sw.setAttribute('aria-checked',on);
- if(on){sfx('neon');neon.dataset.on='flicker';setTimeout(()=>neon.dataset.on='true',RM?0:900)}else{sfx('click');neon.dataset.on='false'}});
+ if(on){neon.dataset.on='flicker';setTimeout(()=>neon.dataset.on='true',RM?0:900)}else{neon.dataset.on='false'}});
 // LETTER BOARD
 const board=document.getElementById('board');
 const picks=['Standard Haircut (Adults 13 & Up)','Haircut & Beard',"Kid's Haircut (12 & Under)",'Shave on Face','Facials','Two Strand Twist','Loc Maintenance (Retwist)','Medium Knotless','Box Braid Medium','Wash & Curl'];
@@ -15,17 +15,17 @@ board.innerHTML=picks.map(t=>{const f=find(t);if(!f)return'';return`<button clas
 board.querySelectorAll('.row').forEach(row=>row.addEventListener('click',()=>{
  const st=(+row.dataset.st||0)+1;row.dataset.st=st%3;const val=[ '····',row.dataset.p,row.dataset.m][st%3].padStart(4,' ');
  const pr=row.querySelector('.pr');pr.innerHTML=tiles(val);[...pr.children].forEach((t,i)=>{t.style.animationDelay=i*70+'ms';t.classList.add('fl')});
- [...pr.children].forEach((t,i)=>setTimeout(()=>sfx('flip'),i*70));}));
+ }));
 // FLIP CARDS
-document.querySelectorAll('.flip').forEach(f=>{const go=()=>{f.classList.toggle('flipped');sfx('flip')};
+document.querySelectorAll('.flip').forEach(f=>{const go=()=>{f.classList.toggle('flipped');};
  f.addEventListener('click',e=>{if(e.target.closest('a,button'))return;go()});f.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target===f){e.preventDefault();go()}})});
 // STICKERS
 const wrap=document.getElementById('stickers');let z=10;
 wrap.querySelectorAll('.sticker').forEach((s,i)=>{let sx,sy,ox=0,oy=0,d=false;const rot=[-6,4,-3,7,-2][i];s.style.setProperty('--r',rot+'deg');
- s.addEventListener('pointerdown',e=>{d=true;s.setPointerCapture(e.pointerId);sx=e.clientX-ox;sy=e.clientY-oy;s.style.zIndex=++z;s.classList.add('lift');sfx('pop')});
+ s.addEventListener('pointerdown',e=>{d=true;s.setPointerCapture(e.pointerId);sx=e.clientX-ox;sy=e.clientY-oy;s.style.zIndex=++z;s.classList.add('lift');});
  s.addEventListener('pointermove',e=>{if(!d)return;const W=wrap.getBoundingClientRect(),b=s.getBoundingClientRect();ox=e.clientX-sx;oy=e.clientY-sy;
   s.style.translate=`${ox}px ${oy}px`});
- const end=()=>{if(!d)return;d=false;s.classList.remove('lift');sfx('click')};s.addEventListener('pointerup',end);s.addEventListener('pointercancel',end)});
+ const end=()=>{if(!d)return;d=false;s.classList.remove('lift');};s.addEventListener('pointerup',end);s.addEventListener('pointercancel',end)});
 // HAIR STUDIO
 const cv=document.getElementById('hair'),ctx=cv.getContext('2d'),hint=document.getElementById('hairHint');
 let W=0,H=0,dpr=1,strands=[],falling=[],tool='comb',style='natural';
@@ -45,9 +45,9 @@ function grow(){strands=[];const S=STY[style],h=head(),sc=Math.min(W,H)/520;
  const b=document.getElementById('styleBook');if(f){b.dataset.svc=f.id;b.dataset.cat=f.cat;b.dataset.name=f.s.t}}
 function size(){const r=cv.getBoundingClientRect();dpr=Math.min(devicePixelRatio,2);W=r.width;H=r.height;cv.width=W*dpr;cv.height=H*dpr;grow()}
 document.getElementById('styles').addEventListener('click',e=>{const b=e.target.closest('[data-style]');if(!b)return;style=b.dataset.style;
- document.querySelectorAll('#styles button').forEach(x=>x.setAttribute('aria-checked',x===b));sfx('pop');grow()});
-document.querySelectorAll('[data-tool]').forEach(b=>b.addEventListener('click',()=>{tool=b.dataset.tool;document.querySelectorAll('[data-tool]').forEach(x=>x.classList.toggle('on',x===b));cv.dataset.tool=tool;sfx('click')}));
-document.getElementById('regrow').addEventListener('click',()=>{grow();falling=[];sfx('pop')});
+ document.querySelectorAll('#styles button').forEach(x=>x.setAttribute('aria-checked',x===b));grow()});
+document.querySelectorAll('[data-tool]').forEach(b=>b.addEventListener('click',()=>{tool=b.dataset.tool;document.querySelectorAll('[data-tool]').forEach(x=>x.classList.toggle('on',x===b));cv.dataset.tool=tool;}));
+document.getElementById('regrow').addEventListener('click',()=>{grow();falling=[];});
 // pointer
 let P=null,last=null,combT=0;
 function pos(e){const r=cv.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}}
@@ -57,9 +57,9 @@ const up=()=>{P=null};cv.addEventListener('pointerup',up);cv.addEventListener('p
 function segX(a,b,c,d){const r=(b.x-a.x)*(d.y-c.y)-(b.y-a.y)*(d.x-c.x);if(!r)return false;const t=((c.x-a.x)*(d.y-c.y)-(c.y-a.y)*(d.x-c.x))/r,u=((c.x-a.x)*(b.y-a.y)-(c.y-a.y)*(b.x-a.x))/r;return t>=0&&t<=1&&u>=0&&u<=1}
 function act(a,b){const vx=b.x-a.x,vy=b.y-a.y;if(!vx&&!vy)return;
  if(tool==='comb'){let hit=false;const R=28;for(const s of strands)for(let j=1;j<s.pts.length;j++){const p=s.pts[j],dx=p.x-b.x,dy=p.y-b.y;if(dx*dx+dy*dy<R*R){p.x+=vx*.6;p.y+=vy*.6;hit=true}}
-  if(hit&&performance.now()-combT>90){combT=performance.now();sfx('comb')}}
+  }
  else{for(const s of strands){for(let j=1;j<s.pts.length;j++){if(segX(a,b,s.pts[j-1],s.pts[j])){const cut=s.pts.splice(j);
-   if(cut.length>1)falling.push({pts:cut,L:s.L,s,born:performance.now()});sfx('snip');break}}}}}
+   if(cut.length>1)falling.push({pts:cut,L:s.L,s,born:performance.now()});break}}}}}
 function sim(list,pinned){for(const s of list){const pts=s.pts,S=STY[style];
  for(let j=pinned?1:0;j<pts.length;j++){const p=pts[j],vx=(p.x-p.px)*.96,vy=(p.y-p.py)*.96;p.px=p.x;p.py=p.y;p.x+=vx;p.y+=vy+(pinned?.35*(1-S.lift):.5);
   if(!pinned&&p.y>H-6){p.y=H-6;p.px=p.x+(p.x-p.px)*.3}}

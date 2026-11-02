@@ -134,6 +134,9 @@ section{position:relative;padding:clamp(3rem,7vw,6rem) clamp(1rem,4vw,3.5rem)}
 .pegs button:active,.tools button:active{transform:scale(.92)}
 .pegs button[aria-checked=true]{background:#fff;color:#2f4a3f;border-style:solid}
 .tools button.on{background:var(--red);border:2px solid #fff}
+.mode{display:inline-flex;background:rgba(0,0,0,.25);border:2px solid #fff;border-radius:999px;padding:3px;margin-bottom:.9rem}
+.mode button{border:0;background:none;color:#fff;font:800 .95rem 'Bricolage Grotesque';text-transform:uppercase;padding:.5em 1.3em;border-radius:999px;cursor:pointer;min-height:40px}
+.mode button[aria-checked=true]{background:#ffe17a;color:#2f4a3f}
 .chalk-price{font:700 .85rem 'Space Mono';color:#ffe17a}
 .stamp-btn{margin-top:.8rem;font:800 1.05rem 'Bricolage Grotesque';text-transform:uppercase;color:#fff;background:transparent;border:3px solid #fff;border-radius:6px;padding:.5em 1em;transform:rotate(-3deg);cursor:pointer;transition:transform .2s,background .2s}
 .stamp-btn:hover{background:var(--red);transform:rotate(0) scale(1.05)}
@@ -257,3 +260,4 @@ section{position:relative;padding:clamp(3rem,7vw,6rem) clamp(1rem,4vw,3.5rem)}
  .pennant{padding-right:2.6rem;font-size:.9rem}
 }
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.slap{opacity:1;transform:none}}
+main{overflow-x:clip}

@@ -8,7 +8,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',
 const GROUPS={braids:{k:'BRAIDS & NATURAL HAIR',c:['Braiding & Micros','Cornrow','Twist & Dreads','Weaves','Ladies','Children','Relaxers','Color']},
  cuts:{k:'CUTS & SHAVES',c:['Gentlemen','Children','Parts & Designs','Dye','Specials']}};
 const sec=document.getElementById('services'),chips=document.getElementById('chips'),list=document.getElementById('svcList');
-let door='braids',cat=null;
+let door='cuts',cat=null;
 const fmt=m=>m>=60?(Math.floor(m/60)+'h'+(m%60?' '+m%60+'m':'')):m+' min';
 const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 function renderList(){const c=D.categories.find(x=>x.t===cat);if(!c)return;
@@ -21,7 +21,7 @@ function wipe(cb){if(RM){cb();return}const w=sec.querySelector('.tile-wipe');w.i
 function setDoor(d,anim){const apply=()=>{door=d;cat=GROUPS[d].c[0];sec.dataset.theme=d;document.getElementById('svcKicker').textContent=GROUPS[d].k;
   document.querySelectorAll('.drawer').forEach(b=>b.setAttribute('aria-selected',b.dataset.door===d));renderChips();renderList()};
  anim?wipe(apply):apply()}
-setDoor('braids');
+setDoor('cuts');
 document.querySelectorAll('.drawer').forEach(b=>b.onclick=()=>b.dataset.door!==door&&setDoor(b.dataset.door,true));
 // ticket booking
 const sheet=document.getElementById('sheet'),frame=document.getElementById('bookFrame'),nt=document.getElementById('newtab'),title=document.getElementById('sheetTitle');

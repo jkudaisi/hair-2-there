@@ -1,7 +1,7 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Hair 2 There · Unisex Salon · 359 N Main St, Glassboro NJ</title>
-<meta name="description" content="Family-driven unisex salon on North Main Street in Glassboro since 2004. Braids, natural hair, cuts, shaves and facials. Take a ticket and book online.">
+<meta name="description" content="Family-driven unisex salon on North Main Street in Glassboro since 2004. Cuts, fades, shaves, braids, natural hair and facials. Take a ticket and book online.">
 <meta name="theme-color" content="#f6f4ee">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Archivo:wght@400;500;600;700&family=Monoton&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
   <div class="decal">
     <p class="enamel">EST. 2004 · UNISEX SALON · GLASSBORO NJ</p>
     <h1><span class="w1">Since</span> <span class="w2">2004,</span><br><span class="w3">on Main</span> <span class="w4">Street.</span></h1>
-    <p class="decal-sub">Family-driven and community involved since we opened our doors. Braids, natural hair, cuts, shaves and facials at the most affordable unisex salon in Glassboro.</p>
+    <p class="decal-sub">Family-driven and community involved since we opened our doors. Cuts, fades, shaves, braids, natural hair and facials at the most affordable unisex salon in Glassboro.</p>
     <div class="decal-cta"><button class="big-ticket" data-book><span>Take a ticket</span><small>Pick a service &amp; time online</small></button><a class="phone-tag" href="tel:+18568633600">☎ (856) 863-3600</a></div>
   </div>
 
@@ -63,15 +63,15 @@
   <div class="counter-top">
     <h2 class="stencil">The counter</h2>
     <div class="drawers" role="tablist" aria-label="Menu">
-      <button class="drawer gold" role="tab" data-door="braids" aria-selected="true"><span class="knob"></span>Braids &amp; Natural Hair</button>
-      <button class="drawer red" role="tab" data-door="cuts" aria-selected="false"><span class="knob"></span>Cuts &amp; Shaves</button>
+      <button class="drawer red" role="tab" data-door="cuts" aria-selected="true"><span class="knob"></span>Cuts &amp; Shaves</button>
+      <button class="drawer gold" role="tab" data-door="braids" aria-selected="false"><span class="knob"></span>Braids &amp; Natural Hair</button>
     </div>
   </div>
-  <div class="receipt-wrap" id="services" data-theme="braids">
+  <div class="receipt-wrap" id="services" data-theme="cuts">
     <div class="tile-wipe" aria-hidden="true"></div>
     <div class="folders" id="chips"></div>
     <div class="receipt">
-      <p class="r-head"><b>HAIR 2 THERE</b><span>359 N MAIN ST · GLASSBORO NJ</span><span id="svcKicker">BRAIDS &amp; NATURAL HAIR</span></p>
+      <p class="r-head"><b>HAIR 2 THERE</b><span>359 N MAIN ST · GLASSBORO NJ</span><span id="svcKicker">CUTS &amp; SHAVES</span></p>
       <ul class="svc-list" id="svcList"></ul>
       <p class="r-foot">Prices &amp; times from the salon's Setmore booking page. Some vary by length, size and condition; some don't include hair, as noted.</p>
     </div>
@@ -81,16 +81,17 @@
 <!-- STUDIO -->
 <section id="studio" class="studio tiles">
   <div class="oval">
-    <canvas id="hair" aria-label="Interactive hair: comb or cut strands"></canvas>
-    <p class="hint" id="hairHint">drag across the hair</p>
+    <canvas id="hair" data-tool="clip" aria-label="Interactive hair: clip, cut or comb"></canvas>
+    <p class="hint" id="hairHint">drag the clippers over the hair</p>
   </div>
   <div class="chalk">
     <h2>Try a style.</h2>
-    <p>Pick one. Grab the comb or the scissors. Work it with your mouse or finger. Snipped strands hit the floor.</p>
+    <p>Pick a cut, grab the clippers and fade it with your mouse or finger. Clippings hit the floor. Switch to Braids for braids, locs and twists.</p>
+    <div class="mode" role="radiogroup" aria-label="Braids or cuts"><button data-mode="cuts" role="radio" aria-checked="true">Cuts</button><button data-mode="braids" role="radio" aria-checked="false">Braids</button></div>
     <div class="pegs" id="styles" role="radiogroup" aria-label="Hair style">
       <button data-style="natural" role="radio" aria-checked="true">Natural</button><button data-style="box" role="radio" aria-checked="false">Box braids</button><button data-style="knotless" role="radio" aria-checked="false">Knotless</button><button data-style="locs" role="radio" aria-checked="false">Locs</button><button data-style="twists" role="radio" aria-checked="false">Twists</button>
     </div>
-    <div class="tools"><button data-tool="comb" class="on">Comb</button><button data-tool="cut">Scissors</button><button id="regrow">Regrow</button></div>
+    <div class="tools"><button data-tool="clip" class="on" id="tool1">Clippers</button><button data-tool="cut">Scissors</button><button id="regrow">Regrow</button></div>
     <p class="chalk-price" id="stylePrice"></p>
     <button class="stamp-btn" id="styleBook">Book this style</button>
   </div>
@@ -99,8 +100,8 @@
 <!-- PINNED UP -->
 <section class="pinned">
   <figure class="polaroid p-ba"><div class="ba-frame" id="ba"><img src="img/after.jpg" alt="Illustration: braids after" loading="lazy"><div class="ba-before"><img src="img/before.jpg" alt="Illustration: natural hair before" loading="lazy"></div><div class="ba-handle" role="slider" tabindex="0" aria-label="Before and after" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><span>⇆</span></div></div><figcaption>before ⇆ after · AI illustration, not a client photo</figcaption></figure>
-  <figure class="polaroid p-2"><img src="img/braids.jpg" alt="Braiding hair, comb and gold cuffs (AI illustration)" loading="lazy"><figcaption>braids, locs, twists · AI concept image</figcaption></figure>
-  <figure class="polaroid p-3"><img src="img/cuts.jpg" alt="Barber chair with hot towel (AI illustration)" loading="lazy"><figcaption>hot towel shave · AI concept image</figcaption></figure>
+  <figure class="polaroid p-2"><img src="img/cuts.jpg" alt="Barber chair with hot towel (AI illustration)" loading="lazy"><figcaption>hot towel shave · AI concept image</figcaption></figure>
+  <figure class="polaroid p-3"><img src="img/braids.jpg" alt="Braiding hair, comb and gold cuffs (AI illustration)" loading="lazy"><figcaption>braids, locs, twists · AI concept image</figcaption></figure>
   <div class="index-card c1 stamp"><b>Steam three step facial</b><p>Steam opens your pores and loosens buildup for a deeper cleanse. A great way to de-stress.</p></div>
   <div class="index-card c2 stamp"><b>Hot towel shave</b><p>A hot towel and a straight razor. Very effective, and very relaxing.</p></div>
   <div class="index-card c3 stamp"><b>Hair units for men</b><p>A custom, natural looking unit for men dealing with thinning or hair loss.</p></div>

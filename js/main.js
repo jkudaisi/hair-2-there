@@ -76,6 +76,7 @@ if(hasG&&!RM){
 // cursor
 if(FINE&&!RM){const c=document.querySelector('.cursor');let x=-50,y=-50,cx=x,cy=y;
  addEventListener('pointermove',e=>{x=e.clientX;y=e.clientY});
- document.addEventListener('pointerover',e=>c.classList.toggle('big',!!e.target.closest('a,button,.ba-frame,[role=slider]')));
+ document.addEventListener('pointerover',e=>c.classList.toggle('big',!!e.target.closest('a,button,.ba-frame,[role=slider],.sticker,.flip,#chair')));
+ document.addEventListener('pointerover',e=>c.style.opacity=e.target.closest('#hair')?0:1);
  (function l(){cx+=(x-cx)*.22;cy+=(y-cy)*.22;c.style.transform=`translate(${cx}px,${cy}px)`;requestAnimationFrame(l)})();}
 })();

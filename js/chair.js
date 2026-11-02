@@ -3,7 +3,7 @@ import {RoundedBoxGeometry} from 'three/addons/geometries/RoundedBoxGeometry.js'
 const cv=document.getElementById('chair');if(cv){
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const r=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});r.setPixelRatio(Math.min(devicePixelRatio,2));r.outputColorSpace=THREE.SRGBColorSpace;r.toneMapping=THREE.ACESFilmicToneMapping;r.shadowMap.enabled=true;
-const scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(34,1,.1,100);cam.position.set(0,3,12);cam.lookAt(0,1.9,0);
+const scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(34,1,.1,100);cam.position.set(0,3.4,14.5);cam.lookAt(0,2.1,0);
 scene.add(new THREE.HemisphereLight(0xfff1e0,0x20120a,1.2));
 const key=new THREE.DirectionalLight(0xffe6c4,2.6);key.position.set(4,8,5);key.castShadow=true;key.shadow.mapSize.set(1024,1024);scene.add(key);
 const rim=new THREE.PointLight(0xd42a2a,30,20);rim.position.set(-5,3,-3);scene.add(rim);

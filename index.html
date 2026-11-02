@@ -1,162 +1,167 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Hair 2 There · Unisex Salon · Glassboro, NJ · Since 2004</title>
-<meta name="description" content="Family-driven unisex salon on North Main Street in Glassboro since 2004. Braids, natural hair, cuts, shaves and facials. Book online.">
-<meta name="theme-color" content="#0e0b09">
+<title>Hair 2 There · Unisex Salon · 359 N Main St, Glassboro NJ</title>
+<meta name="description" content="Family-driven unisex salon on North Main Street in Glassboro since 2004. Braids, natural hair, cuts, shaves and facials. Take a ticket and book online.">
+<meta name="theme-color" content="#f6f4ee">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/play.css"></head>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Archivo:wght@400;500;600;700&family=Monoton&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/shop.css"></head>
 <body>
-<div class="cursor" aria-hidden="true"><span></span></div>
-<header class="top">
-  <a href="#top" class="logo">Hair <i>2</i> There</a>
-  <nav><a href="#doors">Services</a><a href="#team">Team</a><a href="#visit">Visit</a></nav>
-  <button class="btn btn-book" data-book>Book now</button>
+<div class="cursor" aria-hidden="true"></div>
+<header class="hdr">
+  <div class="pole-bar" aria-hidden="true"></div>
+  <div class="hdr-row">
+    <a href="#wall" class="plate" aria-label="Hair 2 There home"><span>HAIR</span><b>2</b><span>THERE</span></a>
+    <nav class="stubs" aria-label="Sections"><a href="#counter">Prices</a><a href="#studio">Try a style</a><a href="#crew">Crew</a><a href="#visit">Visit</a></nav>
+    <button class="dispenser" data-book aria-label="Take a ticket: book an appointment"><span class="d-label">TAKE A<br>TICKET</span><span class="d-tab"><i>No.</i><b class="tnum">043</b></span></button>
+  </div>
 </header>
-<main id="top">
-<section class="hero">
-  <canvas id="pole" aria-hidden="true"></canvas>
-  <div class="hero-copy">
-    <p class="mono">Unisex Salon · Glassboro, NJ</p>
-    <h1><span class="ln"><span>Since 2004,</span></span><span class="ln"><span><em>on Main Street.</em></span></span></h1>
-    <p class="lede">Family-driven and community involved since we opened our doors. Braids, natural hair, cuts, shaves and facials at the most affordable unisex salon in Glassboro.</p>
-    <div class="cta"><button class="btn btn-book big" data-book>Book an appointment</button><a class="btn ghost" href="tel:+18568633600">(856) 863-3600</a></div>
+
+<main>
+<!-- THE WALL -->
+<section id="wall" class="wall tiles">
+  <div class="neon-box" id="neonSec">
+    <div class="neon" id="neon" data-on="false"><span class="n1">Hair 2 There</span><span class="n2">OPEN</span></div>
+    <button class="switch" id="neonSw" role="switch" aria-checked="false" aria-label="Turn on the neon sign"><span class="plate-sw"><span class="toggle-nub"></span></span><span class="sw-txt">Flip the sign</span></button>
   </div>
-  <p class="scroll-hint mono">Scroll</p>
-</section>
 
-<section class="marquee" aria-hidden="true"><div class="track">Braids · Natural Hair · Fades · Hot Towel Shave · Locs · Steam Facial · Hair Units · Kids Cuts · Braids · Natural Hair · Fades · Hot Towel Shave · Locs · Steam Facial · Hair Units · Kids Cuts ·</div></section>
-
-
-<section class="neon-wrap" id="neonSec">
-  <div class="neon" id="neon" data-on="false"><span class="n1">Hair <i>2</i> There</span><span class="n2">OPEN · since 2004</span></div>
-  <button class="switch" id="neonSw" role="switch" aria-checked="false" aria-label="Turn on the neon sign"><span class="knob"></span><span class="mono">Flip the sign</span></button>
-</section>
-
-<section class="play" id="play">
-  <div class="play-copy">
-    <p class="mono kicker">Take a seat</p><h2>Spin the chair.</h2>
-    <p>Drag the chair to spin it. Pump the lever to raise it up. It's the same chair you'll sit in on North Main.</p>
-    <p class="tag mono">3D concept model</p>
+  <div class="decal">
+    <p class="enamel">EST. 2004 · UNISEX SALON · GLASSBORO NJ</p>
+    <h1><span class="w1">Since</span> <span class="w2">2004,</span><br><span class="w3">on Main</span> <span class="w4">Street.</span></h1>
+    <p class="decal-sub">Family-driven and community involved since we opened our doors. Braids, natural hair, cuts, shaves and facials at the most affordable unisex salon in Glassboro.</p>
+    <div class="decal-cta"><button class="big-ticket" data-book><span>Take a ticket</span><small>Pick a service &amp; time online</small></button><a class="phone-tag" href="tel:+18568633600">☎ (856) 863-3600</a></div>
   </div>
-  <div class="chair-stage"><canvas id="chair" aria-label="3D barber chair, drag to spin"></canvas>
-    <div class="lever" id="lever" role="slider" tabindex="0" aria-label="Pump lever: raise the chair" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0"><div class="lever-arm"><span></span></div><small class="mono">Pump ↓</small></div>
-    <button class="mono drop" id="drop">Release ↓</button>
-  </div>
-</section>
 
-<section class="studio" id="studio">
-  <div class="studio-copy">
-    <p class="mono kicker">Try a style</p><h2>Comb it. Cut it. Braid it.</h2>
-    <p>Pick a style, then grab the comb or the scissors and go to work with your mouse or finger. Snipped strands fall to the floor.</p>
-    <div class="styles" id="styles" role="radiogroup" aria-label="Hair style">
-      <button data-style="natural" aria-checked="true" role="radio">Natural</button><button data-style="box" role="radio" aria-checked="false">Box braids</button><button data-style="knotless" role="radio" aria-checked="false">Knotless</button><button data-style="locs" role="radio" aria-checked="false">Locs</button><button data-style="twists" role="radio" aria-checked="false">Twists</button>
+  <div class="mirror-wrap">
+    <div class="mirror" aria-label="Mirror: drag the chair to spin it">
+      <canvas id="chair"></canvas><span class="glare" aria-hidden="true"></span>
+      <span class="mirror-tip">drag to spin</span>
     </div>
-    <div class="tools" role="radiogroup" aria-label="Tool"><button data-tool="comb" class="on">🪮 Comb</button><button data-tool="cut">✂️ Scissors</button><button id="regrow">↺ Regrow</button></div>
-    <p class="style-price mono" id="stylePrice"></p>
-    <button class="btn btn-book sm" id="styleBook">Book this style</button>
+    <div class="lever" id="lever" role="slider" tabindex="0" aria-label="Pump lever: raise the chair" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0"><div class="lever-arm"><span></span></div><small>PUMP</small></div>
+    <button class="drop" id="drop">Let it down ↓</button>
   </div>
-  <div class="studio-stage"><canvas id="hair" aria-label="Interactive hair: comb or cut strands"></canvas><p class="hint mono" id="hairHint">Drag across the hair</p></div>
-</section>
 
-<section id="doors" class="doors">
-  <p class="mono kicker">Pick a door</p>
-  <h2 class="reveal">Two crafts. One chair away.</h2>
-  <div class="door-row">
-    <button class="door gold" data-door="braids"><img src="img/braids.jpg" alt="Braiding hair, comb and gold cuffs (AI illustration)" loading="lazy"><span class="door-label"><span class="mono">Door 01</span><b>Braids &amp; Natural Hair</b><small>Knotless, cornrows, locs, twists, weaves, wash &amp; style</small></span></button>
-    <button class="door red" data-door="cuts"><img src="img/cuts.jpg" alt="Barber chair with hot towel (AI illustration)" loading="lazy"><span class="door-label"><span class="mono">Door 02</span><b>Cuts &amp; Shaves</b><small>Fades, shape ups, razor work, beards, color, facials</small></span></button>
+  <div class="mini-board">
+    <p class="board-head">Tap a row. Flip the price.</p>
+    <div class="board" id="board"></div>
   </div>
-</section>
 
-<section id="services" class="services" data-theme="braids">
-  <div class="wipe" aria-hidden="true"></div>
-  <div class="svc-head">
-    <div><p class="mono kicker" id="svcKicker">Braids &amp; Natural Hair</p><h2 id="svcTitle">The braid menu.</h2></div>
-    <div class="toggle" role="tablist"><button role="tab" data-door="braids" aria-selected="true">Braids</button><button role="tab" data-door="cuts" aria-selected="false">Cuts</button></div>
-  </div>
-  <div class="chips" id="chips"></div>
-  <ul class="svc-list" id="svcList"></ul>
-  <p class="fine">Prices and times from Hair 2 There's Setmore booking page. Some prices vary by length, size and condition, and some don't include hair, as noted.</p>
-</section>
-
-
-<section class="board-sec">
-  <p class="mono kicker">The letter board</p><h2>Tap a row. See the price.</h2>
-  <div class="board" id="board"></div>
-  <p class="fine">Prices from the salon's Setmore page.</p>
-</section>
-
-<section class="feature">
-  <div class="feat reveal"><span class="mono">01</span><h3>Steam three step facial</h3><p>Steam opens your pores and loosens buildup for a deeper cleanse. A great way to de-stress.</p></div>
-  <div class="feat reveal"><span class="mono">02</span><h3>Hot towel shave</h3><p>A hot towel and a straight razor. Very effective, and a very relaxing experience.</p></div>
-  <div class="feat reveal"><span class="mono">03</span><h3>Hair units for men</h3><p>A custom, natural looking unit made for men dealing with thinning or hair loss.</p></div>
-</section>
-
-<section class="ba">
-  <div class="ba-copy"><p class="mono kicker">Hair is our canvas</p><h2 class="reveal">Before. After.</h2><p>Drag the line. Natural hair to medium knotless braids.</p><p class="tag mono">AI illustration · not a client photo</p></div>
-  <div class="ba-frame" id="ba"><img src="img/after.jpg" alt="Illustration: braids after" loading="lazy"><div class="ba-before"><img src="img/before.jpg" alt="Illustration: natural hair before" loading="lazy"></div><div class="ba-handle" role="slider" tabindex="0" aria-label="Before and after" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><span>⇆</span></div></div>
-</section>
-
-<section id="team" class="team">
-  <p class="mono kicker">The chairs</p><h2 class="reveal">Meet the team.</h2>
-  <div class="cards">
-<div class="flip gold" tabindex="0" role="button" aria-label="Flip Brianni Wyatt's card"><div class="flip-in">
-  <article class="card face"><div class="mono-av">BW</div><h3>Brianni Wyatt</h3><p class="role mono">Braiding / Loc Tech</p><p>Started out in children's braid styles. Natural hair care, extensions and the current braiding styles.</p><span class="mono flip-hint">Tap to flip ↻</span></article>
-  <article class="card back"><p class="role mono">Brianni's chair</p><p class="specs">Knotless · Box braids · Cornrows · Locs · Twists · Kids braids · Wash &amp; curl</p><div class="card-act"><button class="btn sm" data-book-staff="RNxVv2H7R14Wd8SOjO0NdPiIEx5WjQrb">Book Brianni</button><a href="https://instagram.com/styledbybriw" target="_blank" rel="noopener">@styledbybriw</a></div></article></div></div>
-<div class="flip red" tabindex="0" role="button" aria-label="Flip Nafees Ali's card"><div class="flip-in">
-  <article class="card face"><div class="mono-av">NA</div><h3>Nafees Ali</h3><p class="role mono">Barber</p><p>Brings a great personality and the skill set to satisfy all your hair needs.</p><span class="mono flip-hint">Tap to flip ↻</span></article>
-  <article class="card back"><p class="role mono">Nafees's chair</p><p class="specs">Haircuts · Fades · Shape ups · Beards · Headshaves · Kids cuts</p><div class="card-act"><button class="btn sm" data-book-staff="ad33dc5b39e5e41fcbfddf1e7c1888915">Book Nafees</button></div></article></div></div>
-<div class="flip red" tabindex="0" role="button" aria-label="Flip Damon Knox's card"><div class="flip-in">
-  <article class="card face"><div class="mono-av">DK</div><h3>Damon Knox</h3><p class="role mono">Barber / Hairstylist</p><p>Barber and hairstylist on Setmore, from razor work to color.</p><span class="mono flip-hint">Tap to flip ↻</span></article>
-  <article class="card back"><p class="role mono">Damon's chair</p><p class="specs">Razor outlines · Designs · Color &amp; dye · Relaxers · Facials · Lashes</p><div class="card-act"><button class="btn sm" data-book-staff="r13951538074015098">Book Damon</button></div></article></div></div>
-<div class="flip gold" tabindex="0" role="button" aria-label="Flip Rhoda Woolfolk's card"><div class="flip-in">
-  <article class="card face"><div class="mono-av">RW</div><h3>Rhoda Woolfolk</h3><p class="role mono">Hairstylist</p><p>Ladies cuts and styling on Setmore.</p><span class="mono flip-hint">Tap to flip ↻</span></article>
-  <article class="card back"><p class="role mono">Rhoda's chair</p><p class="specs">Press &amp; curl · Wash &amp; curl · Relaxers · Full color · Geri curl</p><div class="card-act"><button class="btn sm" data-book-staff="a27faf2445cab4546a77e588a45d263a6">Book Rhoda</button></div></article></div></div>
-</div>
-</section>
-
-<section class="reviews">
-  <div class="stars"><b>5.0</b><span>★★★★★</span><small class="mono">151 reviews on Setmore</small><p class="mono hint2">Drag the stickers around ↘</p></div>
-  <div class="stickers" id="stickers">
+  <div class="sticker-zone">
+    <p class="zone-tag">5.0 ★ · 151 reviews on Setmore · drag &amp; peel these</p>
+    <div class="stickers" id="stickers">
     <figure class="sticker s1">“Always professional... Atmosphere is extremely family friendly... Best shop in the area.”<cite>James G.</cite></figure>
     <figure class="sticker s2">“My son had his first hair cut today!! They did great!!!”<cite>Nelly B.</cite></figure>
     <figure class="sticker s3">“Excellent as usual!”<cite>Michael S.</cite></figure>
     <figure class="sticker s4">“Wonderful service friendly environment”<cite>Steven</cite></figure>
     <figure class="sticker s5">“...not only exceptional professional service but outstanding community relationships.”<cite>Sylvia S.</cite></figure>
   </div>
-</section>
-
-<section class="community">
-  <p class="mono kicker">Changing the community one haircut at a time</p>
-  <h2 class="reveal">15+ years of showing up.</h2>
-  <ul class="pills"><li>St. Baldrick's</li><li>Back to School Bookbag Giveaway</li><li>Annual Halloween Costume Party</li><li>Family Success Centers</li><li>Church outreach</li><li>Glassboro Movie Nights</li><li>Guy's Night Out @ Rowan</li><li>Rowan Pride Week</li><li>Toy drive, Boys &amp; Girls Club</li></ul>
-</section>
-
-<section class="rowan"><div class="track2" data-r="Rowan students: we're a few minutes from campus, with our own parking lot · Book ahead online · ">Rowan students: we're a few minutes from campus, with our own parking lot · Book ahead online · </div></section>
-
-<section id="visit" class="visit">
-  <div class="v-info">
-    <p class="mono kicker">The only thing missing is you</p><h2 class="reveal">Visit.</h2>
-    <p class="addr">359 North Main Street<br>Glassboro, NJ 08028</p>
-    <p><a href="tel:+18568633600">(856) 863-3600</a> · <a href="mailto:h2tsalon@gmail.com">h2tsalon@gmail.com</a></p>
-    <table class="hours"><tr><td>Mon</td><td>Closed</td></tr><tr><td>Tue</td><td>9am – 5pm</td></tr><tr><td>Wed</td><td>9am – 6pm</td></tr><tr><td>Thu</td><td>9am – 7pm</td></tr><tr><td>Fri</td><td>8am – 8pm</td></tr><tr><td>Sat</td><td>7am – 5pm</td></tr><tr><td>Sun</td><td>12pm – 5pm</td></tr></table>
-    <p class="note">Good to know: paying by credit card adds a small service charge.</p>
-    <div class="cta"><button class="btn btn-book" data-book>Book now</button><a class="btn ghost" href="https://www.google.com/maps/dir/?api=1&destination=359+N+Main+St+Glassboro+NJ+08028" target="_blank" rel="noopener">Directions</a></div>
   </div>
-  <div class="map"><iframe title="Map: 359 N Main St, Glassboro" loading="lazy" src="https://www.google.com/maps?q=359+N+Main+St,+Glassboro,+NJ+08028&output=embed"></iframe></div>
+</section>
+
+<!-- THE COUNTER -->
+<section id="counter" class="counter">
+  <div class="counter-top">
+    <h2 class="stencil">The counter</h2>
+    <div class="drawers" role="tablist" aria-label="Menu">
+      <button class="drawer gold" role="tab" data-door="braids" aria-selected="true"><span class="knob"></span>Braids &amp; Natural Hair</button>
+      <button class="drawer red" role="tab" data-door="cuts" aria-selected="false"><span class="knob"></span>Cuts &amp; Shaves</button>
+    </div>
+  </div>
+  <div class="receipt-wrap" id="services" data-theme="braids">
+    <div class="tile-wipe" aria-hidden="true"></div>
+    <div class="folders" id="chips"></div>
+    <div class="receipt">
+      <p class="r-head"><b>HAIR 2 THERE</b><span>359 N MAIN ST · GLASSBORO NJ</span><span id="svcKicker">BRAIDS &amp; NATURAL HAIR</span></p>
+      <ul class="svc-list" id="svcList"></ul>
+      <p class="r-foot">Prices &amp; times from the salon's Setmore booking page. Some vary by length, size and condition; some don't include hair, as noted.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STUDIO -->
+<section id="studio" class="studio tiles">
+  <div class="oval">
+    <canvas id="hair" aria-label="Interactive hair: comb or cut strands"></canvas>
+    <p class="hint" id="hairHint">drag across the hair</p>
+  </div>
+  <div class="chalk">
+    <h2>Try a style.</h2>
+    <p>Pick one. Grab the comb or the scissors. Work it with your mouse or finger. Snipped strands hit the floor.</p>
+    <div class="pegs" id="styles" role="radiogroup" aria-label="Hair style">
+      <button data-style="natural" role="radio" aria-checked="true">Natural</button><button data-style="box" role="radio" aria-checked="false">Box braids</button><button data-style="knotless" role="radio" aria-checked="false">Knotless</button><button data-style="locs" role="radio" aria-checked="false">Locs</button><button data-style="twists" role="radio" aria-checked="false">Twists</button>
+    </div>
+    <div class="tools"><button data-tool="comb" class="on">Comb</button><button data-tool="cut">Scissors</button><button id="regrow">Regrow</button></div>
+    <p class="chalk-price" id="stylePrice"></p>
+    <button class="stamp-btn" id="styleBook">Book this style</button>
+  </div>
+</section>
+
+<!-- PINNED UP -->
+<section class="pinned">
+  <figure class="polaroid p-ba"><div class="ba-frame" id="ba"><img src="img/after.jpg" alt="Illustration: braids after" loading="lazy"><div class="ba-before"><img src="img/before.jpg" alt="Illustration: natural hair before" loading="lazy"></div><div class="ba-handle" role="slider" tabindex="0" aria-label="Before and after" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><span>⇆</span></div></div><figcaption>before ⇆ after · AI illustration, not a client photo</figcaption></figure>
+  <figure class="polaroid p-2"><img src="img/braids.jpg" alt="Braiding hair, comb and gold cuffs (AI illustration)" loading="lazy"><figcaption>braids, locs, twists · AI concept image</figcaption></figure>
+  <figure class="polaroid p-3"><img src="img/cuts.jpg" alt="Barber chair with hot towel (AI illustration)" loading="lazy"><figcaption>hot towel shave · AI concept image</figcaption></figure>
+  <div class="index-card c1 stamp"><b>Steam three step facial</b><p>Steam opens your pores and loosens buildup for a deeper cleanse. A great way to de-stress.</p></div>
+  <div class="index-card c2 stamp"><b>Hot towel shave</b><p>A hot towel and a straight razor. Very effective, and very relaxing.</p></div>
+  <div class="index-card c3 stamp"><b>Hair units for men</b><p>A custom, natural looking unit for men dealing with thinning or hair loss.</p></div>
+</section>
+
+<!-- CREW -->
+<section id="crew" class="crew">
+  <h2 class="stencil">The crew <small>flip a badge</small></h2>
+  <div class="cards">
+<div class="flip gold" tabindex="0" role="button" aria-label="Flip Brianni Wyatt's card"><div class="flip-in">
+  <article class="card face"><div class="mono-av">BW</div><h3>Brianni Wyatt</h3><p class="role mono">Braiding / Loc Tech</p><p>Started out in children's braid styles. Natural hair care, extensions and the current braiding styles.</p><span class="mono flip-hint">Flip ↻</span></article>
+  <article class="card back"><p class="role mono">Brianni's chair</p><p class="specs">Knotless · Box braids · Cornrows · Locs · Twists · Kids braids · Wash &amp; curl</p><div class="card-act"><button class="btn sm" data-book-staff="RNxVv2H7R14Wd8SOjO0NdPiIEx5WjQrb">Book Brianni</button><a href="https://instagram.com/styledbybriw" target="_blank" rel="noopener">@styledbybriw</a></div></article></div></div>
+<div class="flip red" tabindex="0" role="button" aria-label="Flip Nafees Ali's card"><div class="flip-in">
+  <article class="card face"><div class="mono-av">NA</div><h3>Nafees Ali</h3><p class="role mono">Barber</p><p>Brings a great personality and the skill set to satisfy all your hair needs.</p><span class="mono flip-hint">Flip ↻</span></article>
+  <article class="card back"><p class="role mono">Nafees's chair</p><p class="specs">Haircuts · Fades · Shape ups · Beards · Headshaves · Kids cuts</p><div class="card-act"><button class="btn sm" data-book-staff="ad33dc5b39e5e41fcbfddf1e7c1888915">Book Nafees</button></div></article></div></div>
+<div class="flip red" tabindex="0" role="button" aria-label="Flip Damon Knox's card"><div class="flip-in">
+  <article class="card face"><div class="mono-av">DK</div><h3>Damon Knox</h3><p class="role mono">Barber / Hairstylist</p><p>Barber and hairstylist on Setmore, from razor work to color.</p><span class="mono flip-hint">Flip ↻</span></article>
+  <article class="card back"><p class="role mono">Damon's chair</p><p class="specs">Razor outlines · Designs · Color &amp; dye · Relaxers · Facials · Lashes</p><div class="card-act"><button class="btn sm" data-book-staff="r13951538074015098">Book Damon</button></div></article></div></div>
+<div class="flip gold" tabindex="0" role="button" aria-label="Flip Rhoda Woolfolk's card"><div class="flip-in">
+  <article class="card face"><div class="mono-av">RW</div><h3>Rhoda Woolfolk</h3><p class="role mono">Hairstylist</p><p>Ladies cuts and styling on Setmore.</p><span class="mono flip-hint">Flip ↻</span></article>
+  <article class="card back"><p class="role mono">Rhoda's chair</p><p class="specs">Press &amp; curl · Wash &amp; curl · Relaxers · Full color · Geri curl</p><div class="card-act"><button class="btn sm" data-book-staff="a27faf2445cab4546a77e588a45d263a6">Book Rhoda</button></div></article></div></div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="community tiles">
+  <h2 class="stencil">Changing the community one haircut at a time</h2>
+  <p class="c-sub">15+ years of showing up.</p>
+  <ul class="tix">
+    <li>St. Baldrick's</li><li>Bookbag Giveaway</li><li>Halloween Costume Party</li><li>Family Success Centers</li><li>Church outreach</li><li>Glassboro Movie Nights</li><li>Guy's Night Out @ Rowan</li><li>Rowan Pride Week</li><li>Boys &amp; Girls Club toy drive</li>
+  </ul>
+  <div class="pennant"><span>ROWAN?</span> We're a few minutes from campus, with our own parking lot.</div>
+</section>
+
+<!-- VISIT -->
+<section id="visit" class="visit">
+  <div class="appt stamp-in">
+    <p class="appt-top"><b>APPOINTMENT CARD</b><span>Hair 2 There · Unisex Salon</span></p>
+    <p class="addr">359 North Main Street<br>Glassboro, NJ 08028</p>
+    <p class="contact"><a href="tel:+18568633600">(856) 863-3600</a><a href="mailto:h2tsalon@gmail.com">h2tsalon@gmail.com</a></p>
+    <table class="hours"><tr><td>MON</td><td>Closed</td></tr><tr><td>TUE</td><td>9am – 5pm</td></tr><tr><td>WED</td><td>9am – 6pm</td></tr><tr><td>THU</td><td>9am – 7pm</td></tr><tr><td>FRI</td><td>8am – 8pm</td></tr><tr><td>SAT</td><td>7am – 5pm</td></tr><tr><td>SUN</td><td>12pm – 5pm</td></tr></table>
+    <span class="rubber">OPEN<br>TUE–SUN</span>
+    <div class="appt-cta"><button class="big-ticket sm" data-book><span>Take a ticket</span></button><a class="phone-tag" href="https://www.google.com/maps/dir/?api=1&destination=359+N+Main+St+Glassboro+NJ+08028" target="_blank" rel="noopener">Directions ↗</a></div>
+  </div>
+  <div class="window"><iframe title="Map: 359 N Main St, Glassboro" loading="lazy" src="https://www.google.com/maps?q=359+N+Main+St,+Glassboro,+NJ+08028&output=embed"></iframe></div>
+  <p class="sign-card">Heads up: paying by credit card adds a small service charge.</p>
 </section>
 </main>
-<footer><p class="logo">Hair <i>2</i> There</p><p>Concept redesign by Jedidiah Kudaisi. Not the official site. Door, before/after images are AI concept imagery, not client work. Prices and team from the salon’s Setmore page.</p><p class="mono">IG @hairtwothereglassboro · Est. 2004</p></footer>
+<footer class="ftr"><div class="pole-bar" aria-hidden="true"></div>
+  <p><b>Concept redesign by Jedidiah Kudaisi. Not the official site.</b></p>
+  <p>Polaroid and before/after images are AI concept imagery, not client work. Prices, team and reviews from the salon's Setmore page. IG @hairtwothereglassboro.</p>
+</footer>
 
 <div class="sheet" id="sheet" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Book an appointment">
   <div class="sheet-bg" data-close></div>
-  <div class="sheet-panel"><div class="sheet-bar"><span class="mono" id="sheetTitle">Book · Hair 2 There</span><a class="mono newtab" id="newtab" href="https://hair2there9800.setmore.com/book" target="_blank" rel="noopener">Open in new tab ↗</a><button class="x" data-close aria-label="Close booking">✕</button></div>
-  <div class="sheet-body"><div class="loader"><i></i><span class="mono">Loading booking…</span></div><iframe id="bookFrame" title="Setmore booking" allow="payment"></iframe></div></div>
+  <div class="ticket">
+    <div class="t-head"><div><p class="t-admit">ADMIT ONE · <span class="tnum">043</span></p><p class="t-title" id="sheetTitle">Book · Hair 2 There</p></div><a class="newtab" id="newtab" href="https://hair2there9800.setmore.com/book" target="_blank" rel="noopener">new tab ↗</a><button class="x" data-close aria-label="Close booking">✕</button></div>
+    <div class="t-body"><div class="loader"><i></i><span>Printing your ticket…</span></div><iframe id="bookFrame" title="Setmore booking" allow="payment"></iframe></div>
+  </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
-<script src="js/data.js"></script><script src="js/main.js"></script><script src="js/play.js"></script><script type="module" src="js/pole.js"></script><script type="module" src="js/chair.js"></script>
+<script src="js/data.js"></script><script src="js/main.js"></script><script src="js/play.js"></script><script type="module" src="js/chair.js"></script>
 </body></html>

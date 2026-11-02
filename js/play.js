@@ -25,7 +25,7 @@ wrap.querySelectorAll('.sticker').forEach((s,i)=>{let sx,sy,ox=0,oy=0,d=false;co
  s.addEventListener('pointerdown',e=>{d=true;s.setPointerCapture(e.pointerId);sx=e.clientX-ox;sy=e.clientY-oy;s.style.zIndex=++z;s.classList.add('lift');});
  s.addEventListener('pointermove',e=>{if(!d)return;const W=wrap.getBoundingClientRect(),b=s.getBoundingClientRect();ox=e.clientX-sx;oy=e.clientY-sy;
   s.style.translate=`${ox}px ${oy}px`});
- const end=()=>{if(!d)return;d=false;s.classList.remove('lift');};s.addEventListener('pointerup',end);s.addEventListener('pointercancel',end)});
+ const end=()=>{if(!d)return;d=false;s.classList.remove('lift');s.classList.add('boing');setTimeout(()=>s.classList.remove('boing'),700);};s.addEventListener('pointerup',end);s.addEventListener('pointercancel',end)});
 // HAIR STUDIO
 const cv=document.getElementById('hair'),ctx=cv.getContext('2d'),hint=document.getElementById('hairHint');
 let W=0,H=0,dpr=1,strands=[],falling=[],tool='comb',style='natural';

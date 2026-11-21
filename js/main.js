@@ -46,7 +46,7 @@ ba.addEventListener('pointerdown',e=>{drag=true;ba.setPointerCapture(e.pointerId
 h.addEventListener('keydown',e=>{const v=+h.getAttribute('aria-valuenow');if(e.key==='ArrowLeft')setX(v-5);if(e.key==='ArrowRight')setX(v+5)});
 // stamps / slaps on scroll
 const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('hit');io.unobserve(en.target)}}),{threshold:.25});
-document.querySelectorAll('.stamp,.stamp-in,.polaroid,.flip,.tix li,.sticker,.pennant,.receipt,.decal h1 span,.neon-box,.mirror-wrap,.mini-board').forEach((el,i)=>{el.classList.add('slap');el.style.setProperty('--sd',(i%6)*70+'ms');RM?el.classList.add('hit'):io.observe(el)});
+document.querySelectorAll('.stamp,.stamp-in,.polaroid,.flip,.tix li,.sticker,.pennant,.decal h1 span,.neon-box,.mirror-wrap,.mini-board').forEach((el,i)=>{el.classList.add('slap');el.style.setProperty('--sd',(i%6)*70+'ms');RM?el.classList.add('hit'):io.observe(el)});
 // cursor: comb-tooth ring
 if(FINE&&!RM){const c=document.querySelector('.cursor');let x=-50,y=-50,cx=x,cy=y;addEventListener('pointermove',e=>{x=e.clientX;y=e.clientY});
  document.addEventListener('pointerover',e=>{c.classList.toggle('big',!!e.target.closest('a,button,.ba-frame,[role=slider],.sticker,.flip,#chair'));c.style.opacity=e.target.closest('#hair,iframe')?0:1});
